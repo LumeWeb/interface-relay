@@ -1,5 +1,5 @@
 {
-    "name": "@lumeweb/resolver-types",
+    "name": "@lumeweb/relay-types",
     "version": "0.1.0",
     "main": "dist",
     "type": "module",
