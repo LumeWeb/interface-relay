@@ -1,0 +1,9 @@
+{
+    "name": "@lumeweb/resolver-types",
+    "version": "0.1.0",
+    "main": "dist",
+    "type": "module",
+    "devDependencies": {
+        "ajv": "^8.11.0"
+    }
+}
