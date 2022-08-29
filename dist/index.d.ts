@@ -1,4 +1,3 @@
-import type { JSONSchemaType } from "ajv";
 export interface RPCRequest {
   bypassCache?: boolean;
   module: string;
@@ -17,7 +16,6 @@ export interface RPCMethod {
     sendStream: (stream: AsyncIterable<Uint8Array>) => void
   ) => Promise<RPCResponse | null>;
 }
-export declare const RPC_REQUEST_SCHEMA: JSONSchemaType<RPCRequest>;
 export interface StreamFileResponse {
   data?: Uint8Array;
   done: boolean;
