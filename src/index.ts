@@ -29,45 +29,7 @@ export interface StreamFileResponse {
   done: boolean;
 }
 
-export interface PluginAPI {
-  config: any;
-  registerMethod: (methodName: string, method: RPCMethod) => void;
-  loadPlugin: (moduleName: string) => Promise<Plugin>;
-  getMethods: () => string[];
-  ssl: {
-    setContext: (context: tls.SecureContext) => void;
-    getContext: () => tls.SecureContext;
-    getSaved: (retry: boolean) => Promise<boolean | SavedSslData>;
-    set: (
-      cert: IndependentFileSmall | Uint8Array,
-      key: IndependentFileSmall | Uint8Array
-    ) => void;
-    get: () => SslData;
-    save: () => Promise<void>;
-  };
-  appRouter: {
-    get: () => express.Router;
-    set: (newRouter: express.Router) => void;
-    reset: () => void;
-  };
-  files: {
-    createIndependentFileSmall(
-      seed: Uint8Array,
-      userInode: string,
-      fileData: Uint8Array
-    ): Promise<[IndependentFileSmall, Err]>;
-    openIndependentFileSmall(
-      seed: Uint8Array,
-      userInode: string
-    ): Promise<[IndependentFileSmall, Err]>;
-    overwriteIndependentFileSmall(
-      file: IndependentFileSmall,
-      newData: Uint8Array
-    ): Promise<Err>;
-  };
-  logger: Logger;
-  getSeed: () => Uint8Array;
-}
+export type DnsProvider = (ipAddress: string) => Promise<void>;
 
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
 
@@ -115,4 +77,47 @@ export interface SslData {
 export interface SavedSslData {
   cert?: IndependentFileSmall;
   key?: IndependentFileSmall;
+}
+
+export interface PluginAPI {
+  config: any;
+  registerMethod: (methodName: string, method: RPCMethod) => void;
+  loadPlugin: (moduleName: string) => Promise<Plugin>;
+  getMethods: () => string[];
+  ssl: {
+    setContext: (context: tls.SecureContext) => void;
+    getContext: () => tls.SecureContext;
+    getSaved: (retry: boolean) => Promise<boolean | SavedSslData>;
+    set: (
+      cert: IndependentFileSmall | Uint8Array,
+      key: IndependentFileSmall | Uint8Array
+    ) => void;
+    get: () => SslData;
+    save: () => Promise<void>;
+  };
+  appRouter: {
+    get: () => express.Router;
+    set: (newRouter: express.Router) => void;
+    reset: () => void;
+  };
+  files: {
+    createIndependentFileSmall(
+      seed: Uint8Array,
+      userInode: string,
+      fileData: Uint8Array
+    ): Promise<[IndependentFileSmall, Err]>;
+    openIndependentFileSmall(
+      seed: Uint8Array,
+      userInode: string
+    ): Promise<[IndependentFileSmall, Err]>;
+    overwriteIndependentFileSmall(
+      file: IndependentFileSmall,
+      newData: Uint8Array
+    ): Promise<Err>;
+  };
+  dns: {
+    setProvider(provider: DnsProvider): void;
+  };
+  logger: Logger;
+  getSeed: () => Uint8Array;
 }
