@@ -34,7 +34,10 @@ export interface PluginAPI {
     setContext: (context: tls.SecureContext) => void;
     getContext: () => tls.SecureContext;
     getSaved: (retry: boolean) => Promise<boolean | SslData>;
-    set: (cert: IndependentFileSmall, key: IndependentFileSmall) => void;
+    set: (
+      cert: IndependentFileSmall | Uint8Array,
+      key: IndependentFileSmall | Uint8Array
+    ) => void;
     get: () => SslData;
     save: () => Promise<void>;
   };
@@ -90,7 +93,7 @@ export interface IndependentFileSmall {
   readData: ReadDataFn;
 }
 export interface SslData {
-  cert?: IndependentFileSmall;
-  key?: IndependentFileSmall;
+  cert?: IndependentFileSmall | Uint8Array;
+  key?: IndependentFileSmall | Uint8Array;
 }
 //# sourceMappingURL=index.d.ts.map
