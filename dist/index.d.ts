@@ -96,4 +96,8 @@ export interface SslData {
   cert?: Uint8Array;
   key?: Uint8Array;
 }
+export interface SavedSslData {
+  cert?: IndependentFileSmall;
+  key?: IndependentFileSmall;
+}
 //# sourceMappingURL=index.d.ts.map
