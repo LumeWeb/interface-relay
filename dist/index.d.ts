@@ -43,7 +43,23 @@ export interface PluginAPI {
     set: (newRouter: express.Router) => void;
     reset: () => void;
   };
+  files: {
+    createIndependentFileSmall(
+      seed: Uint8Array,
+      userInode: string,
+      fileData: Uint8Array
+    ): Promise<[IndependentFileSmall, Err]>;
+    openIndependentFileSmall(
+      seed: Uint8Array,
+      userInode: string
+    ): Promise<[IndependentFileSmall, Err]>;
+    overwriteIndependentFileSmall(
+      file: IndependentFileSmall,
+      newData: Uint8Array
+    ): Promise<Err>;
+  };
   logger: Logger;
+  getSeed: () => Uint8Array;
 }
 export declare type PluginFunction = (api: PluginAPI) => Promise<void>;
 export interface Plugin {
