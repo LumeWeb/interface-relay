@@ -25,7 +25,10 @@ export interface StreamFileResponse {
   data?: Uint8Array;
   done: boolean;
 }
-export declare type DnsProvider = (ipAddress: string) => Promise<void>;
+export declare type DnsProvider = (
+  ipAddress: string,
+  domain: string
+) => Promise<void>;
 export declare type PluginFunction = (api: PluginAPI) => Promise<void>;
 export interface Plugin {
   name: string;
