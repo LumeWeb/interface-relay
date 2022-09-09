@@ -29,7 +29,7 @@ export interface StreamFileResponse {
   done: boolean;
 }
 
-export type DnsProvider = (ipAddress: string) => Promise<void>;
+export type DnsProvider = (ipAddress: string, domain: string) => Promise<void>;
 
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
 
