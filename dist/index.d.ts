@@ -25,6 +25,43 @@ export interface StreamFileResponse {
   data?: Uint8Array;
   done: boolean;
 }
+export declare type DnsProvider = (ipAddress: string) => Promise<void>;
+export declare type PluginFunction = (api: PluginAPI) => Promise<void>;
+export interface Plugin {
+  name: string;
+  plugin: PluginFunction;
+  exports?: any;
+  default?: Plugin;
+}
+export declare type RPCStreamHandler = (
+  stream: AsyncIterable<Uint8Array>
+) => Promise<RPCResponse>;
+export declare type OverwriteDataFn = (newData: Uint8Array) => Promise<Err>;
+export declare type ReadDataFn = () => Promise<[Uint8Array, Err]>;
+export interface IndependentFileSmallMetadata {
+  largestHistoricSize: bigint;
+}
+export interface IndependentFileSmall {
+  dataKey: Uint8Array;
+  fileData: Uint8Array;
+  inode: string;
+  keypair: Ed25519Keypair;
+  metadata: IndependentFileSmallMetadata;
+  revision: bigint;
+  seed: Uint8Array;
+  skylink: string;
+  viewKey: string;
+  overwriteData: OverwriteDataFn;
+  readData: ReadDataFn;
+}
+export interface SslData {
+  cert?: Uint8Array;
+  key?: Uint8Array;
+}
+export interface SavedSslData {
+  cert?: IndependentFileSmall;
+  key?: IndependentFileSmall;
+}
 export interface PluginAPI {
   config: any;
   registerMethod: (methodName: string, method: RPCMethod) => void;
@@ -61,43 +98,10 @@ export interface PluginAPI {
       newData: Uint8Array
     ): Promise<Err>;
   };
+  dns: {
+    setProvider(provider: DnsProvider): void;
+  };
   logger: Logger;
   getSeed: () => Uint8Array;
-}
-export declare type PluginFunction = (api: PluginAPI) => Promise<void>;
-export interface Plugin {
-  name: string;
-  plugin: PluginFunction;
-  exports?: any;
-  default?: Plugin;
-}
-export declare type RPCStreamHandler = (
-  stream: AsyncIterable<Uint8Array>
-) => Promise<RPCResponse>;
-export declare type OverwriteDataFn = (newData: Uint8Array) => Promise<Err>;
-export declare type ReadDataFn = () => Promise<[Uint8Array, Err]>;
-export interface IndependentFileSmallMetadata {
-  largestHistoricSize: bigint;
-}
-export interface IndependentFileSmall {
-  dataKey: Uint8Array;
-  fileData: Uint8Array;
-  inode: string;
-  keypair: Ed25519Keypair;
-  metadata: IndependentFileSmallMetadata;
-  revision: bigint;
-  seed: Uint8Array;
-  skylink: string;
-  viewKey: string;
-  overwriteData: OverwriteDataFn;
-  readData: ReadDataFn;
-}
-export interface SslData {
-  cert?: Uint8Array;
-  key?: Uint8Array;
-}
-export interface SavedSslData {
-  cert?: IndependentFileSmall;
-  key?: IndependentFileSmall;
 }
 //# sourceMappingURL=index.d.ts.map
