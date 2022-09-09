@@ -33,7 +33,7 @@ export interface PluginAPI {
   ssl: {
     setContext: (context: tls.SecureContext) => void;
     getContext: () => tls.SecureContext;
-    getSaved: (retry: boolean) => Promise<boolean | SslData>;
+    getSaved: (retry: boolean) => Promise<boolean | SavedSslData>;
     set: (
       cert: IndependentFileSmall | Uint8Array,
       key: IndependentFileSmall | Uint8Array
