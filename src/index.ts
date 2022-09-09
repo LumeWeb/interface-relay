@@ -63,6 +63,7 @@ export interface PluginAPI {
     ): Promise<Err>;
   };
   logger: Logger;
+  getSeed: () => Uint8Array;
 }
 
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
