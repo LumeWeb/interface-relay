@@ -93,7 +93,7 @@ export interface IndependentFileSmall {
   readData: ReadDataFn;
 }
 export interface SslData {
-  cert?: IndependentFileSmall | Uint8Array;
-  key?: IndependentFileSmall | Uint8Array;
+  cert?: Uint8Array;
+  key?: Uint8Array;
 }
 //# sourceMappingURL=index.d.ts.map
