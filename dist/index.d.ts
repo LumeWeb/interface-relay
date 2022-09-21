@@ -80,6 +80,7 @@ export interface PluginAPI {
     ) => void;
     get: () => SslData;
     save: () => Promise<void>;
+    setCheck(checker: () => Promise<void>): void;
   };
   appRouter: {
     get: () => express.Router;
