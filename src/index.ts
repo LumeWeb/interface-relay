@@ -2,6 +2,7 @@ import tls from "tls";
 import type { Logger } from "loglevel";
 import type { Ed25519Keypair, Err } from "libskynet";
 import type express from "express";
+import type Config from "@lumeweb/cfg";
 
 export interface RPCRequest {
   bypassCache?: boolean;
@@ -80,7 +81,7 @@ export interface SavedSslData {
 }
 
 export interface PluginAPI {
-  config: any;
+  config: Config;
   registerMethod: (methodName: string, method: RPCMethod) => void;
   loadPlugin: (moduleName: string) => Promise<Plugin>;
   getMethods: () => string[];
