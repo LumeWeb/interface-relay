@@ -27,12 +27,6 @@ export interface RPCCacheItem extends RPCResponse {
   value: RPCResponse;
   signature: string;
 }
-export declare type RPCClearCacheResponseRelayList = {
-  [relay: string]: RPCClearCacheResponse;
-};
-export interface RPCClearCacheResponse extends RPCResponse {
-  relays?: RPCClearCacheResponseRelayList;
-}
 export interface RPCBroadcastRequest {
   request: RPCRequest;
   relays: string[];
