@@ -1,4 +1,5 @@
 import type EventEmitter from "events";
+import type NodeCache from "node-cache";
 
 export interface RPCRequest {
   module: string;
@@ -54,7 +55,7 @@ export declare class RPCServer extends EventEmitter {
   public static hashQuery(query: RPCRequest): string;
 }
 export declare class RPCCache extends EventEmitter {
-  get data(): RPCCacheData;
+  get data(): NodeCache;
   constructor(server: RPCServer);
   public signResponse(item: RPCCacheItem): any;
   public verifyResponse(pubkey: Buffer, item: RPCCacheItem): boolean | Buffer;
