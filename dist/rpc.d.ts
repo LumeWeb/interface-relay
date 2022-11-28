@@ -51,7 +51,6 @@ export declare class RPCServer extends EventEmitter {
 export declare class RPCCache extends EventEmitter {
   get data(): RPCCacheData;
   constructor(server: RPCServer);
-  getNodeQuery(node: string, queryHash: string): Promise<boolean | RPCResponse>;
   signResponse(item: RPCCacheItem): any;
   verifyResponse(pubkey: Buffer, item: RPCCacheItem): boolean | Buffer;
   addItem(query: RPCRequest, response: RPCResponse): void;
