@@ -1,3 +1,4 @@
+// @ts-ignore
 import type { Ed25519Keypair, Err } from "libskynet";
 import { OverwriteDataFn, ReadDataFn } from "./index.js";
 

@@ -4,6 +4,7 @@ import { Logger } from "loglevel";
 import { RPCMethod, RPCServer } from "./rpc.js";
 import { IndependentFileSmall, SavedSslData, SslData } from "./files.js";
 import type { express } from "express";
+// @ts-ignore
 import type { Err } from "libskynet";
 
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
