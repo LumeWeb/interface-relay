@@ -6,13 +6,10 @@ import { RPCMethod, RPCServer } from "./rpc.js";
 import { IndependentFileSmall, SavedSslData, SslData } from "./files.js";
 import type { express } from "express";
 import type { Err } from "libskynet";
-export declare type PluginFunction = (api: PluginAPI) => Promise<void>;
-export declare type DnsProvider = (
-  ipAddress: string,
-  domain: string
-) => Promise<void>;
-export declare type OverwriteDataFn = (newData: Uint8Array) => Promise<Err>;
-export declare type ReadDataFn = () => Promise<[Uint8Array, Err]>;
+export type PluginFunction = (api: PluginAPI) => Promise<void>;
+export type DnsProvider = (ipAddress: string, domain: string) => Promise<void>;
+export type OverwriteDataFn = (newData: Uint8Array) => Promise<Err>;
+export type ReadDataFn = () => Promise<[Uint8Array, Err]>;
 export interface Plugin {
   name: string;
   plugin: PluginFunction;

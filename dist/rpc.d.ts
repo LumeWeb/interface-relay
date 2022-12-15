@@ -31,6 +31,7 @@ export interface RPCCacheItem extends RPCResponse {
 export interface RPCBroadcastRequest {
   request: RPCRequest;
   relays: string[];
+  timeout: number;
 }
 export interface RPCBroadcastResponse extends RPCResponse {
   relays: {
