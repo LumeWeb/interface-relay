@@ -5,9 +5,16 @@
     "type": "module",
     "devDependencies": {
         "@lumeweb/cfg": "https://github.com/LumeWeb/bcfg.git",
-        "@types/node": "^18.7.16",
+        "@types/node": "^18.11.17",
         "express": "^4.18.1",
-        "loglevel": "^1.8.0",
-        "node-cache": "^5.1.2"
+        "node-cache": "^5.1.2",
+        "prettier": "^2.8.1"
+    },
+    "dependencies": {
+        "@types/eventemitter2": "^4.1.0",
+        "arg": "^5.0.2",
+        "eventemitter2": "^6.4.9",
+        "micro-ed25519-hdkey": "^0.1.2",
+        "pino": "^8.8.0"
     }
 }
