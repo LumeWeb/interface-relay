@@ -11,7 +11,7 @@ export interface Plugin {
   exports?: any;
   default?: Plugin;
 }
-declare class PluginAPI extends EventEmitter2 {
+export declare class PluginAPI extends EventEmitter2 {
   private _server;
   constructor({
     config,
@@ -37,5 +37,4 @@ declare class PluginAPI extends EventEmitter2 {
   loadPlugin(moduleName: string): (moduleName: string) => Promise<Plugin>;
   registerMethod(methodName: string, method: RPCMethod): void;
 }
-export {};
 //# sourceMappingURL=plugin.d.ts.map
