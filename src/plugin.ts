@@ -14,7 +14,7 @@ export interface Plugin {
   default?: Plugin;
 }
 
-declare class PluginAPI extends EventEmitter2 {
+export declare class PluginAPI extends EventEmitter2 {
   private _server;
   constructor({
     config,
