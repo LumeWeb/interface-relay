@@ -15,7 +15,6 @@ export interface Plugin {
 }
 
 export declare class PluginAPI extends EventEmitter2 {
-  private _server;
   constructor({
     config,
     logger,
@@ -27,11 +26,8 @@ export declare class PluginAPI extends EventEmitter2 {
     server: RPCServer;
     swarm: any;
   });
-  private _swarm;
   get swarm(): any;
-  private _config;
   get config(): Config;
-  private _logger;
   get logger(): Logger;
   get rpcServer(): RPCServer;
   get seed(): Uint8Array;
