@@ -4,6 +4,7 @@
     "main": "dist",
     "type": "module",
     "devDependencies": {
+        "@lumeweb/cfg": "https://git.lumeweb.com/LumeWeb/cfg.git",
         "@types/node": "^18.11.17",
         "express": "^4.18.1",
         "node-cache": "^5.1.2",

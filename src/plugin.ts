@@ -3,7 +3,7 @@ import { RPCMethod, RPCServer } from "./rpc.js";
 import { Logger } from "pino";
 import SSLManager from "./ssl.js";
 import type { HDKey } from "micro-ed25519-hdkey";
-import Config from "./config.js";
+import type Config from "@lumeweb/cfg";
 
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
 
@@ -28,6 +28,7 @@ export declare class PluginAPI extends EventEmitter2 {
   });
   get swarm(): any;
   get config(): Config;
+  get pluginConfig(): Config;
   get logger(): Logger;
   get rpcServer(): RPCServer;
   get seed(): Uint8Array;
