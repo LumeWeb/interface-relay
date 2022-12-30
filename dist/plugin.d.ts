@@ -4,6 +4,7 @@ import { Logger } from "pino";
 import SSLManager from "./ssl.js";
 import type { HDKey } from "micro-ed25519-hdkey";
 import type Config from "@lumeweb/cfg";
+import type { ProtocolManager } from "./swarm.js";
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
 export interface Plugin {
   name: string;
@@ -31,6 +32,7 @@ export declare class PluginAPI extends EventEmitter2 {
   get seed(): Uint8Array;
   get identity(): HDKey;
   get ssl(): SSLManager;
+  get protocols(): ProtocolManager;
   loadPlugin(moduleName: string): (moduleName: string) => Promise<Plugin>;
   registerMethod(methodName: string, method: RPCMethod): void;
 }
