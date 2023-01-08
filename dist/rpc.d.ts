@@ -50,6 +50,7 @@ export declare class RPCServer extends EventEmitter {
   setup(stream: any): any;
   signData(data: any): string;
   static hashQuery(query: RPCRequest): string;
+  handleRequest(request: RPCRequest): Promise<RPCResponse>;
 }
 export declare class RPCCache extends EventEmitter {
   get data(): NodeCache;
