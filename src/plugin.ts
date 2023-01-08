@@ -5,6 +5,7 @@ import SSLManager from "./ssl.js";
 import type { HDKey } from "micro-ed25519-hdkey";
 import type Config from "@lumeweb/cfg";
 import type { ProtocolManager } from "./swarm.js";
+import type { Util } from "./util.js";
 
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
 
@@ -27,6 +28,7 @@ export declare class PluginAPI extends EventEmitter2 {
     server: RPCServer;
     swarm: any;
   });
+  get util(): Util;
   get swarm(): any;
   get config(): Config;
   get pluginConfig(): Config;
