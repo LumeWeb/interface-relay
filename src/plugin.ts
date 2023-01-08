@@ -1,7 +1,7 @@
 import type { EventEmitter2 } from "eventemitter2";
-import { RPCMethod, RPCServer } from "./rpc.js";
-import { Logger } from "pino";
-import SSLManager from "./ssl.js";
+import type { RPCMethod, RPCServer } from "./rpc.js";
+import type { Logger } from "pino";
+import type SSLManager from "./ssl.js";
 import type { HDKey } from "micro-ed25519-hdkey";
 import type Config from "@lumeweb/cfg";
 import type { ProtocolManager } from "./swarm.js";
