@@ -4,7 +4,7 @@
     "main": "dist",
     "type": "module",
     "devDependencies": {
-        "@lumeweb/cfg": "https://git.lumeweb.com/LumeWeb/cfg.git",
+        "@lumeweb/cfg": "git+https://git.lumeweb.com/LumeWeb/cfg.git",
         "@types/b4a": "^1.6.0",
         "@types/node": "^18.11.17",
         "c": "^1.1.1",
@@ -14,7 +14,7 @@
         "typescript": "^4.9.4"
     },
     "dependencies": {
-        "@lumeweb/dht-cache": "https://git.lumeweb.com/LumeWeb/dht-cache.git",
+        "@lumeweb/dht-cache": "git+https://git.lumeweb.com/LumeWeb/dht-cache.git",
         "@types/eventemitter2": "^4.1.0",
         "arg": "^5.0.2",
         "eventemitter2": "^6.4.9",
