@@ -1,5 +1,5 @@
 {
-    "name": "@lumeweb/relay-types",
+    "name": "@lumeweb/interface-relay",
     "version": "0.1.0",
     "main": "dist",
     "type": "module",
