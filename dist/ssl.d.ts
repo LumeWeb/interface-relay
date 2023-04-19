@@ -2,19 +2,17 @@
 /// <reference types="node" />
 import type tls from "tls";
 export type SSLManagerRenewHandler = (domain: string) => Promise<boolean>;
+export type SSLCert = string | Buffer | Array<string | Buffer>;
 declare class SSLManager {
-  private _context?;
-  private _key?;
-  private _cert?;
-  private _domain;
-  private _renewHandler?;
   constructor(domain: string);
   get context(): tls.SecureContext;
   set privateKey(key: Buffer);
-  set cert(cert: Buffer);
-  private _maybeUpdateContext;
+  set cert(cert: SSLCert);
   renew(): Promise<boolean>;
-  get enabled(): any;
+  get enabled(): boolean;
+  get ready(): boolean;
+  get renewHandler(): SSLManagerRenewHandler;
+  set renewHandler(value: SSLManagerRenewHandler);
 }
 export default SSLManager;
 //# sourceMappingURL=ssl.d.ts.map
