@@ -6,6 +6,7 @@ import type { HDKey } from "micro-ed25519-hdkey";
 import type Config from "@lumeweb/cfg";
 import type { ProtocolManager } from "./swarm.js";
 import type { Util } from "./util.js";
+import type { FastifyInstance } from "fastify";
 export type PluginFunction = (api: PluginAPI) => Promise<void>;
 export interface Plugin {
   name: string;
@@ -35,6 +36,7 @@ export declare class PluginAPI extends EventEmitter2 {
   get identity(): HDKey;
   get ssl(): SSLManager;
   get protocols(): ProtocolManager;
+  get app(): FastifyInstance;
   loadPlugin(moduleName: string): (moduleName: string) => Promise<Plugin>;
   registerMethod(methodName: string, method: RPCMethod): void;
 }
