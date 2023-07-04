@@ -1,6 +1,5 @@
 import type EventEmitter from "events";
 import type NodeCache from "node-cache";
-import type DHTCache from "@lumeweb/dht-cache";
 
 export interface RPCRequest {
   module: string;
@@ -49,7 +48,7 @@ export declare class RPCServer extends EventEmitter {
   registerMethod(
     moduleName: string,
     methodName: string,
-    options: RPCMethod
+    options: RPCMethod,
   ): void;
   public getMethods(): string[];
   public setup(stream: any): any;
@@ -59,7 +58,6 @@ export declare class RPCServer extends EventEmitter {
 }
 export declare class RPCCache extends EventEmitter {
   get data(): NodeCache;
-  get dhtCache(): DHTCache;
   constructor(server: RPCServer);
   public signResponse(item: RPCCacheItem): any;
   public verifyResponse(pubkey: Buffer, item: RPCCacheItem): boolean | Buffer;
