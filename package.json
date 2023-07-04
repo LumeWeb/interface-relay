@@ -5,9 +5,12 @@
     "type": "module",
     "devDependencies": {
         "@lumeweb/node-library-preset": "^0.2.7",
+        "@types/b4a": "^1.6.0",
+        "compact-encoding": "^2.12.0",
         "ed25519-keygen": "^0.4.1",
         "eventemitter2": "^6.4.9",
         "fastify": "^4.19.2",
+        "node-cache": "^5.1.2",
         "presetter": "*"
     },
     "readme": "ERROR: No README data found!",
