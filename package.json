@@ -1,8 +1,13 @@
 {
     "name": "@lumeweb/interface-relay",
     "version": "0.1.0",
-    "main": "dist",
+    "main": "lib/index.js",
     "type": "module",
+    "types": "lib/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "gitea@git.lumeweb.com:LumeWeb/interface-relay.git"
+    },
     "devDependencies": {
         "@lumeweb/node-library-preset": "^0.2.7",
         "@types/b4a": "^1.6.0",
@@ -16,9 +21,17 @@
     "readme": "ERROR: No README data found!",
     "_id": "@lumeweb/interface-relay@0.1.0",
     "scripts": {
-        "prepare": "presetter bootstrap"
+        "prepare": "presetter bootstrap",
+        "build": "run build",
+        "semantic-release": "semantic-release"
     },
     "dependencies": {
-        "@lumeweb/relay-cfg": "^0.1.8"
-    }
+        "@lumeweb/relay-cfg": "0.1.9"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "lib"
+    ]
 }
