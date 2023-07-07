@@ -1,6 +1,6 @@
 {
     "name": "@lumeweb/interface-relay",
-    "version": "0.0.2-develop.2",
+    "version": "0.0.2-develop.3",
     "main": "lib/index.js",
     "type": "module",
     "types": "lib/index.d.ts",
