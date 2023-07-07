@@ -18,7 +18,8 @@
                 "eventemitter2": "^6.4.9",
                 "fastify": "^4.19.2",
                 "node-cache": "^5.1.2",
-                "presetter": "*"
+                "presetter": "*",
+                "presetter-preset-hybrid": "^4.0.1"
             }
         },
         "node_modules/@aashutoshrathi/word-wrap": {

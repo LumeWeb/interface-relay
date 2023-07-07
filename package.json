@@ -4,6 +4,14 @@
     "main": "lib/index.js",
     "type": "module",
     "types": "lib/index.d.ts",
+    "module": "lib/index.mjs",
+    "exports": {
+        ".": {
+            "require": "./lib/index.js",
+            "import": "./lib/index.mjs"
+        },
+        "./package.json": "./package.json"
+    },
     "repository": {
         "type": "git",
         "url": "gitea@git.lumeweb.com:LumeWeb/interface-relay.git"
@@ -16,7 +24,8 @@
         "eventemitter2": "^6.4.9",
         "fastify": "^4.19.2",
         "node-cache": "^5.1.2",
-        "presetter": "*"
+        "presetter": "*",
+        "presetter-preset-hybrid": "^4.0.1"
     },
     "readme": "ERROR: No README data found!",
     "_id": "@lumeweb/interface-relay@0.1.0",
